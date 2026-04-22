@@ -1,26 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-dark: #0d0d0d;
+  --bg-mid: #161616;
+  --cream: #f5f5f5;
+  --cream-dim: #888888;
+  --gold: #f01e1e;
+  --gold-light: #ff4444;
+  --text-dark: #0d0d0d;
+  --border: rgba(240, 30, 30, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+::selection {
+  background: var(--gold);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* ── Premium animations ── */
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes borderPulse {
+  0%, 100% { border-color: rgba(240,30,30,0.2); }
+  50%       { border-color: rgba(240,30,30,0.5); }
+}
+
+@keyframes redGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(240,30,30,0); }
+  50%       { box-shadow: 0 0 32px rgba(240,30,30,0.12); }
+}
+
+/* Heading shimmer on hover */
+h1:hover, h2:hover {
+  background: linear-gradient(90deg, var(--cream) 0%, var(--gold) 40%, var(--cream) 60%, var(--cream) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* Stat numbers glow */
+.stat-number {
+  transition: text-shadow 0.3s;
+}
+.stat-number:hover {
+  text-shadow: 0 0 24px rgba(240,30,30,0.5);
+}
+
+/* Section reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Quality / port cards hover */
+.port-card {
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.port-card:hover {
+  background: #1e1010 !important;
+  box-shadow: inset 0 0 0 1px rgba(240,30,30,0.3), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* Grain texture overlay for sections */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Red line accent */
+.red-line {
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 1.5rem;
+  transition: width 0.4s ease;
+}
+.red-line:hover, *:hover > .red-line {
+  width: 80px;
+}
+
+/* Border pulse on focused form inputs */
+input:focus, textarea:focus, select:focus {
+  border-bottom-color: var(--gold) !important;
+  outline: none;
+}
+
+/* Smooth page transitions */
+main {
+  animation: fadeUp 0.5s ease both;
 }
