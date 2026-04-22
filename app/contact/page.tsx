@@ -156,10 +156,10 @@ export default function ContactPage() {
                 <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cream-dim)', marginBottom: '0.75rem' }}>{lang === 'en' ? 'Phone / Fax' : 'Telefon / Faks'}</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <a href={`tel:${C.phone.replace(/\s/g, '')}`} style={{ fontSize: '0.95rem', color: 'var(--cream)', textDecoration: 'none' }}>{C.phone}</a>
-                  <a href="https://wa.me/905337301242" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.95rem', color: 'var(--cream)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <span style={{ fontSize: '0.95rem', color: 'var(--cream)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                     +90 533 730 12 42
                     <span style={{ fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)', border: '1px solid var(--gold)', padding: '0.1rem 0.4rem' }}>WhatsApp</span>
-                  </a>
+                  </span>
                 </div>
               </div>
               <div style={{ borderBottom: '1px solid var(--border)', paddingBottom: '1.5rem' }}>

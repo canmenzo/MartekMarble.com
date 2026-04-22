@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 
 export function isVideo(src: string) {
   return /\.(mp4|mov|webm|MP4|MOV|WEBM)$/i.test(src);
@@ -49,7 +50,7 @@ export function Lightbox({ items, initialIndex, onClose }: LightboxProps) {
   const src = items[current];
   const video = isVideo(src);
 
-  return (
+  const content = (
     <div
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
       style={{
@@ -133,4 +134,6 @@ export function Lightbox({ items, initialIndex, onClose }: LightboxProps) {
       `}</style>
     </div>
   );
+
+  return createPortal(content, document.body);
 }
