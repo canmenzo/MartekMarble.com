@@ -278,9 +278,9 @@ function ProductsContent() {
         }
         .filter-btn:hover { border-color: var(--cream-dim); }
         .filter-btn-active {
-          background: rgba(212,175,55,0.1) !important;
-          border-color: var(--gold) !important;
-          color: var(--gold) !important;
+          background: rgba(200,40,40,0.12) !important;
+          border-color: #c82828 !important;
+          color: #e04040 !important;
         }
         .product-img { transition: transform 0.8s ease; }
         .product-card { transition: transform 0.5s ease; }
