@@ -204,19 +204,11 @@ function ProductsContent() {
       <section style={{ padding: '2rem', borderBottom: '1px solid var(--border)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
           {filterLabels.map((f, i) => (
-            <motion.button key={f} onClick={() => setActive(i)} whileTap={{ scale: 0.95 }}
-              style={{
-                background: active === i ? 'rgba(240,30,30,0.1)' : 'none',
-                border: '1px solid',
-                borderColor: active === i ? 'var(--gold)' : 'var(--border)',
-                color: active === i ? 'var(--gold)' : 'var(--cream-dim)',
-                fontFamily: "'Raleway', sans-serif",
-                fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase',
-                padding: '0.5rem 1.2rem', cursor: 'pointer', transition: 'all 0.35s ease',
-              }}
+            <button key={f} onClick={() => setActive(i)}
+              className={`filter-btn${active === i ? ' filter-btn-active' : ''}`}
             >
               {f}
-            </motion.button>
+            </button>
           ))}
         </div>
       </section>
@@ -231,7 +223,7 @@ function ProductsContent() {
 
       {/* Grid */}
       <section style={{ padding: '1.5rem 2rem 7rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5px' }}>
+        <div key={active} style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5px' }}>
           {filtered.map((p, i) => {
             const hasGallery = (productGallery[p.id]?.length ?? 0) > 0;
             return (
@@ -272,6 +264,24 @@ function ProductsContent() {
       {selected && <ProductModal product={selected} lang={lang} onClose={() => setSelected(null)} />}
 
       <style>{`
+        .filter-btn {
+          background: none;
+          border: 1px solid var(--border);
+          color: var(--cream-dim);
+          font-family: 'Raleway', sans-serif;
+          font-size: 0.72rem;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          padding: 0.5rem 1.2rem;
+          cursor: pointer;
+          transition: border-color 0.25s, color 0.25s, background 0.25s;
+        }
+        .filter-btn:hover { border-color: var(--cream-dim); }
+        .filter-btn-active {
+          background: rgba(212,175,55,0.1) !important;
+          border-color: var(--gold) !important;
+          color: var(--gold) !important;
+        }
         .product-img { transition: transform 0.8s ease; }
         .product-card { transition: transform 0.5s ease; }
         .product-card:hover { transform: translateY(-4px); }
