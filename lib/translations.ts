@@ -1,10 +1,10 @@
 export type Lang = 'en' | 'tr' | 'es' | 'pt';
 
 export const langFlags: Record<Lang, string> = {
-  en: '🇬🇧',
-  tr: '🇹🇷',
-  es: '🇪🇸',
-  pt: '🇵🇹',
+  en: 'gb',
+  tr: 'tr',
+  es: 'es',
+  pt: 'pt',
 };
 
 export const langLabels: Record<Lang, string> = {
@@ -30,7 +30,7 @@ export const t = {
     },
     stats: [
       { value: '20+', label: 'Years of Export' },
-      { value: '4', label: 'Major Ports' },
+      { value: '5', label: 'Major Ports' },
       { value: '30+', label: 'Countries Served' },
     ],
     featured: {
@@ -56,11 +56,12 @@ export const t = {
     about_page: {
       heading: 'About Martek Marble',
       story_heading: 'Our Story',
-      story: 'Martek Marble Ltd. Co. has been periodically exporting Turkish natural stones to all corners of the world through Turkey\'s four major ports (İzmir, Mersin, Gemlik and Tekirdağ) for over two decades. We supply marble, travertine, limestone, and beige products in block, slab, and cut-to-size formats. When required, our natural stones are cut at factories and delivered to our customers as high-quality finished products.',
+      story: 'Martek Marble Ltd. Co. has been periodically exporting Turkish natural stones to all corners of the world through Turkey\'s five major ports (İzmir, İzmir Aliağa, Mersin, Gemlik and Tekirdağ) for over two decades. We supply marble, travertine, limestone, and beige products in block, slab, and cut-to-size formats. When required, our natural stones are cut at factories and delivered to our customers as high-quality finished products.',
       mission: 'Our customers\' satisfaction will serve as a reference for the future, and we aim to build lasting working relationships with each of them.',
       ports_heading: 'Export Ports',
       ports: [
         { name: 'İzmir', desc: 'Aegean Port' },
+        { name: 'İzmir Aliağa', desc: 'Aegean Port' },
         { name: 'Mersin', desc: 'Mediterranean Port' },
         { name: 'Gemlik', desc: 'Marmara Region Port' },
         { name: 'Tekirdağ', desc: 'Thrace Region Port' },
@@ -105,7 +106,7 @@ export const t = {
     },
     stats: [
       { value: '20+', label: 'Yıllık İhracat' },
-      { value: '4', label: 'Büyük Liman' },
+      { value: '5', label: 'Büyük Liman' },
       { value: '30+', label: 'Ülkeye İhracat' },
     ],
     featured: {
@@ -131,11 +132,12 @@ export const t = {
     about_page: {
       heading: 'Martek Marble Hakkında',
       story_heading: 'Hikayemiz',
-      story: 'Martek Marble Ltd. Şti., yirmi yılı aşkın süredir Türk doğal taşlarını İzmir, Mersin, Gemlik ve Tekirdağ limanları üzerinden periyodik olarak dünyanın dört bir yanına ihraç etmektedir. Mermer, traverten, kireçtaşı ve bej ürünleri blok, levha ve kesim ölçüsünde temin ve tedarik etmekteyiz. Doğal taşlarımız gerektiğinde fabrikalarda kesilerek yüksek kalitede müşterilerimize sunulmaktadır.',
+      story: 'Martek Marble Ltd. Şti., yirmi yılı aşkın süredir Türk doğal taşlarını İzmir, İzmir Aliağa, Mersin, Gemlik ve Tekirdağ limanları üzerinden periyodik olarak dünyanın dört bir yanına ihraç etmektedir. Mermer, traverten, kireçtaşı ve bej ürünleri blok, levha ve kesim ölçüsünde temin ve tedarik etmekteyiz. Doğal taşlarımız gerektiğinde fabrikalarda kesilerek yüksek kalitede müşterilerimize sunulmaktadır.',
       mission: 'Müşterilerimizin memnuniyeti geleceğe referans olacak; onlarla sürekli çalışma ortamı bulmayı hedefliyoruz.',
       ports_heading: 'İhracat Limanları',
       ports: [
         { name: 'İzmir', desc: 'Ege Limanı' },
+        { name: 'İzmir Aliağa', desc: 'Ege Limanı' },
         { name: 'Mersin', desc: 'Akdeniz Limanı' },
         { name: 'Gemlik', desc: 'Marmara Limanı' },
         { name: 'Tekirdağ', desc: 'Trakya Limanı' },
@@ -180,7 +182,7 @@ export const t = {
     },
     stats: [
       { value: '20+', label: 'Años de Exportación' },
-      { value: '4', label: 'Puertos Principales' },
+      { value: '5', label: 'Puertos Principales' },
       { value: '30+', label: 'Países Atendidos' },
     ],
     featured: {
@@ -206,11 +208,12 @@ export const t = {
     about_page: {
       heading: 'Sobre Martek Marble',
       story_heading: 'Nuestra Historia',
-      story: 'Martek Marble Ltd. Co. ha exportado periódicamente piedras naturales turcas a todos los rincones del mundo a través de los cuatro principales puertos de Turquía (İzmir, Mersin, Gemlik y Tekirdağ) durante más de dos décadas. Suministramos mármol, travertino, caliza y productos beige en formatos de bloque, losa y corte a medida. Cuando es necesario, nuestras piedras naturales se cortan en fábricas y se entregan como productos terminados de alta calidad.',
+      story: 'Martek Marble Ltd. Co. ha exportado periódicamente piedras naturales turcas a todos los rincones del mundo a través de los cinco principales puertos de Turquía (İzmir, İzmir Aliağa, Mersin, Gemlik y Tekirdağ) durante más de dos décadas. Suministramos mármol, travertino, caliza y productos beige en formatos de bloque, losa y corte a medida. Cuando es necesario, nuestras piedras naturales se cortan en fábricas y se entregan como productos terminados de alta calidad.',
       mission: 'La satisfacción de nuestros clientes servirá como referencia para el futuro, y nuestro objetivo es construir relaciones laborales duraderas con cada uno de ellos.',
       ports_heading: 'Puertos de Exportación',
       ports: [
         { name: 'İzmir', desc: 'Puerto del Egeo' },
+        { name: 'İzmir Aliağa', desc: 'Puerto del Egeo' },
         { name: 'Mersin', desc: 'Puerto del Mediterráneo' },
         { name: 'Gemlik', desc: 'Puerto de Mármara' },
         { name: 'Tekirdağ', desc: 'Puerto de Tracia' },
@@ -255,7 +258,7 @@ export const t = {
     },
     stats: [
       { value: '20+', label: 'Anos de Exportação' },
-      { value: '4', label: 'Portos Principais' },
+      { value: '5', label: 'Portos Principais' },
       { value: '30+', label: 'Países Servidos' },
     ],
     featured: {
@@ -281,11 +284,12 @@ export const t = {
     about_page: {
       heading: 'Sobre a Martek Marble',
       story_heading: 'A Nossa História',
-      story: 'A Martek Marble Ltd. Co. tem exportado periodicamente pedras naturais turcas para todos os cantos do mundo através dos quatro principais portos da Turquia (İzmir, Mersin, Gemlik e Tekirdağ) há mais de duas décadas. Fornecemos mármore, travertino, calcário e produtos bege em formatos de bloco, laje e corte à medida. Quando necessário, as nossas pedras naturais são cortadas em fábricas e entregues como produtos acabados de alta qualidade.',
+      story: 'A Martek Marble Ltd. Co. tem exportado periodicamente pedras naturais turcas para todos os cantos do mundo através dos cinco principais portos da Turquia (İzmir, İzmir Aliağa, Mersin, Gemlik e Tekirdağ) há mais de duas décadas. Fornecemos mármore, travertino, calcário e produtos bege em formatos de bloco, laje e corte à medida. Quando necessário, as nossas pedras naturais são cortadas em fábricas e entregues como produtos acabados de alta qualidade.',
       mission: 'A satisfação dos nossos clientes servirá como referência para o futuro, e o nosso objetivo é construir relações de trabalho duradouras com cada um deles.',
       ports_heading: 'Portos de Exportação',
       ports: [
         { name: 'İzmir', desc: 'Porto do Egeu' },
+        { name: 'İzmir Aliağa', desc: 'Porto do Egeu' },
         { name: 'Mersin', desc: 'Porto do Mediterrâneo' },
         { name: 'Gemlik', desc: 'Porto de Mármara' },
         { name: 'Tekirdağ', desc: 'Porto da Trácia' },

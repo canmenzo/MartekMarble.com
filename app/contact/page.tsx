@@ -163,7 +163,7 @@ export default function ContactPage() {
               <div>
                 <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cream-dim)', marginBottom: '0.75rem' }}>{lang === 'en' ? 'Export Ports' : lang === 'tr' ? 'İhracat Limanları' : lang === 'es' ? 'Puertos de Exportación' : 'Portos de Exportação'}</p>
                 <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                  {['İzmir', 'Mersin', 'Gemlik', 'Tekirdağ'].map(p => (
+                  {['İzmir', 'İzmir Aliağa', 'Mersin', 'Gemlik', 'Tekirdağ'].map(p => (
                     <span key={p} style={{ border: '1px solid var(--border)', color: 'var(--cream-dim)', fontSize: '0.75rem', letterSpacing: '0.1em', padding: '0.35rem 0.8rem' }}>{p}</span>
                   ))}
                 </div>

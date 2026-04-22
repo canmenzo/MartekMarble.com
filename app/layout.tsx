@@ -6,7 +6,11 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Martek Marble | Premium Turkish Natural Stone',
-  description: 'Martek Marble Ltd. Co. exports premium marble, travertine, and limestone from Turkey\'s finest quarries through İzmir, Mersin, and Gemlik ports since 2003.',
+  description: 'Martek Marble Ltd. Co. exports premium marble, travertine, and limestone from Turkey\'s finest quarries through İzmir, İzmir Aliağa, Mersin, Gemlik and Tekirdağ ports since 2003.',
+  icons: {
+    icon: '/img/logo.png',
+    apple: '/img/logo.png',
+  },
   keywords: 'marble, travertine, Turkish marble, natural stone, export, Bursa Beige, Crema Soho, Pearl Travertine, Rosalia Marble',
   openGraph: {
     title: 'Martek Marble | Premium Turkish Natural Stone',

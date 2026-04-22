@@ -119,7 +119,8 @@ export default function Navbar() {
                 gap: '0.4rem',
               }}
             >
-              <span style={{ fontSize: '0.9rem', lineHeight: 1 }}>{langFlags[lang]}</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`https://flagcdn.com/w40/${langFlags[lang]}.png`} alt="" style={{ width: '18px', height: '13px', objectFit: 'cover', borderRadius: '2px' }} />
               {langLabels[lang]}
               <span style={{ fontSize: '0.55rem', marginLeft: '0.15rem', opacity: 0.6, transition: 'transform 0.3s', transform: langOpen ? 'rotate(180deg)' : 'none' }}>&#9660;</span>
             </button>
@@ -165,7 +166,8 @@ export default function Navbar() {
                   }}
                   className="lang-option"
                 >
-                  <span style={{ fontSize: '0.9rem', lineHeight: 1 }}>{langFlags[l]}</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`https://flagcdn.com/w40/${langFlags[l]}.png`} alt="" style={{ width: '18px', height: '13px', objectFit: 'cover', borderRadius: '2px' }} />
                   {langLabels[l]}
                 </button>
               ))}
@@ -234,7 +236,8 @@ export default function Navbar() {
                 transition: 'all 0.3s',
               }}
             >
-              <span style={{ fontSize: '0.85rem', lineHeight: 1 }}>{langFlags[l]}</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`https://flagcdn.com/w40/${langFlags[l]}.png`} alt="" style={{ width: '18px', height: '13px', objectFit: 'cover', borderRadius: '2px' }} />
               {langLabels[l]}
             </button>
           ))}

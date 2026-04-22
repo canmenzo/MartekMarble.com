@@ -122,7 +122,7 @@ function ProductsContent() {
 
       {/* Grid */}
       <section style={{ padding: '1.5rem 2rem 7rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5px', background: 'var(--border)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5px' }}>
           {filtered.map((p, i) => (
             <motion.div
               key={p.id}
@@ -130,7 +130,7 @@ function ProductsContent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
               className="product-card"
-              style={{ background: 'var(--bg-dark)', overflow: 'hidden' }}
+              style={{ background: 'var(--bg-dark)', overflow: 'hidden', border: '0.75px solid var(--border)' }}
             >
               <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
                 <Image

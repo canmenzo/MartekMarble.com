@@ -70,6 +70,9 @@ export default function Footer() {
             <a href="https://www.google.com/maps/search/Izmir+Port+Turkey" target="_blank" rel="noopener noreferrer" className="footer-link" style={linkStyle}>
               İzmir
             </a>
+            <a href="https://www.google.com/maps/search/Aliaga+Port+Izmir+Turkey" target="_blank" rel="noopener noreferrer" className="footer-link" style={linkStyle}>
+              İzmir Aliağa
+            </a>
             <a href="https://www.google.com/maps/search/Mersin+Port+Turkey" target="_blank" rel="noopener noreferrer" className="footer-link" style={linkStyle}>
               Mersin
             </a>
