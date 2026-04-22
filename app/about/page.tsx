@@ -24,14 +24,14 @@ export default function AboutPage() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,9,8,1) 0%, rgba(10,9,8,0.4) 60%)' }} />
         <div style={{ position: 'relative', zIndex: 1, padding: '3rem 2rem', maxWidth: '1200px', margin: '0 auto', width: '100%', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
           <div>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} style={{ fontSize: '0.72rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.75rem' }}>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} style={{ fontSize: '0.72rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.75rem' }}>
               Est. 2003
             </motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 300, color: 'var(--cream)' }}>
+            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 300, color: 'var(--cream)' }}>
               {A.heading}
             </motion.h1>
           </div>
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}>
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/img/logo.png"
@@ -48,7 +48,7 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
             <p style={{ fontSize: '0.72rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.5rem' }}>{A.story_heading}</p>
@@ -63,29 +63,37 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
             {/* Stats */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--border)', marginBottom: '3rem' }}>
               {[
-                { v: '2003', l: lang === 'en' ? 'Founded' : 'Kuruluş' },
-                { v: '20+', l: lang === 'en' ? 'Years Active' : 'Yıllık Deneyim' },
-                { v: '3', l: lang === 'en' ? 'Export Ports' : 'İhracat Limanı' },
-                { v: '30+', l: lang === 'en' ? 'Countries' : 'Ülke' },
+                { v: '2003', l: lang === 'en' ? 'Founded' : lang === 'tr' ? 'Kuruluş' : lang === 'es' ? 'Fundación' : 'Fundação' },
+                { v: '20+', l: lang === 'en' ? 'Years Active' : lang === 'tr' ? 'Yıllık Deneyim' : lang === 'es' ? 'Años Activos' : 'Anos Ativos' },
+                { v: '4', l: lang === 'en' ? 'Export Ports' : lang === 'tr' ? 'İhracat Limanı' : lang === 'es' ? 'Puertos' : 'Portos' },
+                { v: '30+', l: lang === 'en' ? 'Countries' : lang === 'tr' ? 'Ülke' : lang === 'es' ? 'Países' : 'Países' },
               ].map(s => (
-                <div key={s.l} style={{ background: 'var(--bg-mid)', padding: '2rem', textAlign: 'center' }}>
+                <motion.div
+                  key={s.l}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ background: 'var(--bg-mid)', padding: '2rem', textAlign: 'center', transition: 'background 0.4s' }}
+                >
                   <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.5rem', fontWeight: 300, color: 'var(--gold)' }}>{s.v}</p>
                   <p style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cream-dim)', marginTop: '0.5rem' }}>{s.l}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
             {/* Quality */}
-            <div style={{ border: '1px solid var(--border)', padding: '2rem' }}>
+            <motion.div
+              whileHover={{ borderColor: 'rgba(240,30,30,0.5)' }}
+              style={{ border: '1px solid var(--border)', padding: '2rem', transition: 'border-color 0.4s' }}
+            >
               <p style={{ fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>{A.quality_heading}</p>
               <p style={{ fontSize: '0.85rem', color: 'var(--cream-dim)', lineHeight: 1.8 }}>{A.quality}</p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -96,7 +104,7 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }}
             style={{ textAlign: 'center', marginBottom: '4rem' }}
           >
@@ -104,14 +112,15 @@ export default function AboutPage() {
             <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, color: 'var(--cream)' }}>{A.ports_heading}</h2>
           </motion.div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border)' }} className="ports-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--border)' }} className="ports-grid">
             {A.ports.map((port, i) => (
               <motion.div
                 key={port.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
+                transition={{ duration: 0.7, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
+                className="port-card"
                 style={{ background: 'var(--bg-mid)', padding: '3rem 2rem', textAlign: 'center' }}
               >
                 <div style={{ width: '48px', height: '1px', background: 'var(--gold)', margin: '0 auto 1.5rem' }} />
@@ -123,8 +132,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-<style>{`
+      <style>{`
         @media (max-width: 768px) {
           .story-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
           .ports-grid { grid-template-columns: 1fr !important; }
