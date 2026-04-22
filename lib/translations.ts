@@ -18,6 +18,7 @@ export const t = {
   en: {
     nav: {
       products: 'Products',
+      operations: 'Operations',
       about: 'About',
       contact: 'Contact',
       home: 'Home',
@@ -69,6 +70,21 @@ export const t = {
       quality_heading: 'Quality Assurance',
       quality: 'All products are factory-processed and quality-checked before shipment. We work only with trusted quarries and production facilities.',
     },
+    operations_page: {
+      heading: 'Operations',
+      sub: 'From quarry to port — how we handle every step of your order.',
+      block_heading: 'Block Export',
+      block_sub: 'Raw marble and travertine blocks loaded directly from quarry to vessel.',
+      cutsize_heading: 'Cut-to-Size Export',
+      cutsize_sub: 'Factory-processed stone, packed and containerized for worldwide delivery.',
+      products_heading: 'Cut-to-Size Production',
+      products_sub: 'Our partner factories produce finished slabs, tiles, and custom formats to specification.',
+      experience_heading: 'The Martek Experience',
+      experience_sub: 'When you source stone with Martek, you come to Turkey.',
+      experience_p1: 'We meet you at the airport. We arrange your hotel — a proper stay, not a trade conference room. The next morning starts with a full Turkish breakfast, then we drive to the quarries together.',
+      experience_p2: 'At the quarry, you choose your blocks yourself. You see the veining under natural light, feel the weight of the stone, understand exactly what will arrive at your project site. No middlemen. No catalog guesswork.',
+      experience_p3: 'Before you leave, we take you to dinner. We have been doing this since 2003, and some of our clients return every season — not just for the stone.',
+    },
     contact_page: {
       heading: 'Contact Us',
       sub: 'Reach out for quotes, product information, or shipping inquiries.',
@@ -94,6 +110,7 @@ export const t = {
   tr: {
     nav: {
       products: 'Ürünler',
+      operations: 'Operasyonlar',
       about: 'Hakkımızda',
       contact: 'İletişim',
       home: 'Ana Sayfa',
@@ -145,6 +162,21 @@ export const t = {
       quality_heading: 'Kalite Güvencesi',
       quality: 'Tüm ürünler sevkiyat öncesinde fabrika işleminden ve kalite kontrolünden geçirilmektedir. Yalnızca güvenilir taş ocakları ve üretim tesisleriyle çalışıyoruz.',
     },
+    operations_page: {
+      heading: 'Operasyonlar',
+      sub: 'Ocaktan limana — siparişinizin her adımını nasıl yönetiyoruz.',
+      block_heading: 'Blok İhracatı',
+      block_sub: 'Ham mermer ve traverten bloklar doğrudan ocaktan gemiye yüklenir.',
+      cutsize_heading: 'Ebatlı Mal İhracatı',
+      cutsize_sub: 'Fabrikada işlenmiş taşlar, dünya genelinde teslimat için paketlenir ve konteynere yüklenir.',
+      products_heading: 'Ebatlı Mal Üretimi',
+      products_sub: 'Ortak fabrikalarımız, bitmiş levhalar, karolar ve özel formatları teknik şartnamelere göre üretmektedir.',
+      experience_heading: 'Martek Deneyimi',
+      experience_sub: 'Martek ile taş tedarik ettiğinizde, Türkiye\'ye geliyorsunuz.',
+      experience_p1: 'Sizi havalimanından karşılıyoruz. Konaklamanızı ayarlıyoruz — düzgün bir otel, ticaret fuarı odası değil. Ertesi sabah dolu bir Türk kahvaltısıyla başlıyor, ardından birlikte ocaklara gidiyoruz.',
+      experience_p2: 'Ocakta bloklarınızı kendiniz seçiyorsunuz. Damarları doğal ışıkta görüyor, taşın ağırlığını hissediyor, projenize tam olarak ne geleceğini anlıyorsunuz. Aracı yok. Katalog tahmini yok.',
+      experience_p3: 'Ayrılmadan önce sizi akşam yemeğine götürüyoruz. Bunu 2003\'ten beri yapıyoruz ve bazı müşterilerimiz her sezon geri dönüyor — sadece taş için değil.',
+    },
     contact_page: {
       heading: 'İletişim',
       sub: 'Fiyat teklifi, ürün bilgisi veya nakliye sorularınız için bize ulaşın.',
@@ -170,6 +202,7 @@ export const t = {
   es: {
     nav: {
       products: 'Productos',
+      operations: 'Operaciones',
       about: 'Nosotros',
       contact: 'Contacto',
       home: 'Inicio',
@@ -221,6 +254,21 @@ export const t = {
       quality_heading: 'Garantía de Calidad',
       quality: 'Todos los productos son procesados en fábrica y verificados en calidad antes del envío. Trabajamos solo con canteras y centros de producción de confianza.',
     },
+    operations_page: {
+      heading: 'Operaciones',
+      sub: 'De la cantera al puerto — cómo gestionamos cada paso de su pedido.',
+      block_heading: 'Exportación en Bloque',
+      block_sub: 'Bloques de mármol y travertino en bruto, cargados directamente de la cantera al buque.',
+      cutsize_heading: 'Exportación Cortada a Medida',
+      cutsize_sub: 'Piedra procesada en fábrica, embalada y contenerizada para entrega mundial.',
+      products_heading: 'Producción Cortada a Medida',
+      products_sub: 'Nuestras fábricas asociadas producen losas acabadas, baldosas y formatos personalizados según especificación.',
+      experience_heading: 'La Experiencia Martek',
+      experience_sub: 'Cuando usted obtiene piedra con Martek, viene a Turquía.',
+      experience_p1: 'Le recibimos en el aeropuerto. Organizamos su alojamiento — un hotel de verdad, no una sala de conferencias. La mañana siguiente comienza con un desayuno turco completo, luego vamos juntos a las canteras.',
+      experience_p2: 'En la cantera, usted elige sus bloques personalmente. Ve las vetas bajo luz natural, siente el peso de la piedra, comprende exactamente lo que llegará a su obra. Sin intermediarios. Sin conjeturas de catálogo.',
+      experience_p3: 'Antes de que se vaya, le invitamos a cenar. Llevamos haciendo esto desde 2003, y algunos de nuestros clientes regresan cada temporada — no solo por la piedra.',
+    },
     contact_page: {
       heading: 'Contáctenos',
       sub: 'Escríbanos para cotizaciones, información de productos o consultas de envío.',
@@ -246,6 +294,7 @@ export const t = {
   pt: {
     nav: {
       products: 'Produtos',
+      operations: 'Operações',
       about: 'Sobre',
       contact: 'Contacto',
       home: 'Início',
@@ -297,6 +346,21 @@ export const t = {
       quality_heading: 'Garantia de Qualidade',
       quality: 'Todos os produtos são processados em fábrica e verificados em qualidade antes do envio. Trabalhamos apenas com pedreiras e instalações de produção de confiança.',
     },
+    operations_page: {
+      heading: 'Operações',
+      sub: 'Da pedreira ao porto — como gerimos cada etapa da sua encomenda.',
+      block_heading: 'Exportação em Bloco',
+      block_sub: 'Blocos brutos de mármore e travertino carregados diretamente da pedreira para o navio.',
+      cutsize_heading: 'Exportação Cortada à Medida',
+      cutsize_sub: 'Pedra processada em fábrica, embalada e contentorizada para entrega mundial.',
+      products_heading: 'Produção Cortada à Medida',
+      products_sub: 'As nossas fábricas parceiras produzem lajes acabadas, ladrilhos e formatos personalizados conforme especificação.',
+      experience_heading: 'A Experiência Martek',
+      experience_sub: 'Quando obtém pedra com a Martek, vem à Turquia.',
+      experience_p1: 'Recebemo-lo no aeroporto. Tratamos do seu alojamento — um hotel a sério, não uma sala de conferências. A manhã seguinte começa com um pequeno-almoço turco completo, depois vamos juntos às pedreiras.',
+      experience_p2: 'Na pedreira, escolhe os seus blocos pessoalmente. Vê as veias sob luz natural, sente o peso da pedra, percebe exatamente o que chegará à sua obra. Sem intermediários. Sem suposições de catálogo.',
+      experience_p3: 'Antes de partir, convidamo-lo para jantar. Fazemos isto desde 2003, e alguns dos nossos clientes regressam todas as temporadas — não apenas pela pedra.',
+    },
     contact_page: {
       heading: 'Contacte-nos',
       sub: 'Entre em contacto para cotações, informações de produtos ou questões de envio.',
@@ -322,7 +386,7 @@ export const t = {
 };
 
 export const products = [
-  // ── White Marbles ──
+  // ── With Photos ──
   {
     id: 'marmara-white',
     name: { en: 'Marmara White', tr: 'Marmara Beyaz', es: 'Mármara Blanco', pt: 'Mármara Branco' },
@@ -335,6 +399,48 @@ export const products = [
     displayType: { en: 'White Marble', tr: 'Beyaz Mermer', es: 'Mármol Blanco', pt: 'Mármore Branco' },
     filterType: 'marble',
     origin: 'Marmara Island, Balıkesir',
+    image: '/img/bloklar/marmara-white/awsd123.jpeg',
+  },
+  {
+    id: 'carrara-white',
+    name: { en: 'Carrara White (Bianco Ibiza)', tr: 'Carrara Beyaz (Bianco Ibiza)', es: 'Carrara Blanco (Bianco Ibiza)', pt: 'Carrara Branco (Bianco Ibiza)' },
+    desc: {
+      en: 'Turkey\'s answer to Italian Carrara. A pure white marble with subtle gray veining that delivers timeless elegance. Ideal for luxury countertops, bathroom cladding, and statement flooring.',
+      tr: 'İtalyan Carrara\'nın Türk karşılığı. Saf beyaz zemin üzerinde ince gri damarlarıyla zamansız bir zarafet sunar. Lüks tezgahlar ve banyo kaplamalarında idealdir.',
+      es: 'La respuesta de Turquía al Carrara italiano. Un mármol blanco puro con sutiles vetas grises que ofrece elegancia atemporal. Ideal para encimeras de lujo y revestimientos de baño.',
+      pt: 'A resposta da Turquia ao Carrara italiano. Um mármore branco puro com sutis veias cinzentas que oferece elegância intemporal. Ideal para bancadas de luxo e revestimentos de casa de banho.',
+    },
+    displayType: { en: 'White Marble', tr: 'Beyaz Mermer', es: 'Mármol Blanco', pt: 'Mármore Branco' },
+    filterType: 'marble',
+    origin: 'Muğla',
+    image: '/img/plakalar/blanco-white-cut-size/z1.jpeg',
+  },
+  {
+    id: 'calacatta',
+    name: { en: 'Calacatta', tr: 'Calacatta', es: 'Calacatta', pt: 'Calacatta' },
+    desc: {
+      en: 'Distinguished by its bold, dramatic veining against a pristine white background. This premium stone is the material of choice for luxury hotels, villas, and high-end residential projects worldwide.',
+      tr: 'Saf beyaz zemin üzerinde cesur, dramatik damarlarıyla öne çıkar. Dünya genelinde lüks oteller, villalar ve üst segment konut projelerinin vazgeçilmez taşıdır.',
+      es: 'Distinguido por sus vetas audaces y dramáticas sobre un fondo blanco puro. Esta piedra premium es el material elegido para hoteles de lujo, villas y proyectos residenciales de alto nivel.',
+      pt: 'Distinguido pelas suas veias ousadas e dramáticas sobre um fundo branco puro. Esta pedra premium é o material escolhido para hotéis de luxo, vilas e projetos residenciais de alto nível.',
+    },
+    displayType: { en: 'White Marble', tr: 'Beyaz Mermer', es: 'Mármol Blanco', pt: 'Mármore Branco' },
+    filterType: 'marble',
+    origin: 'Afyonkarahisar',
+    image: '/img/quarryabout.jpg',
+  },
+  {
+    id: 'kemalpasa-white',
+    name: { en: 'Kemal Paşa White', tr: 'Kemal Paşa Beyaz', es: 'Kemal Paşa Blanco', pt: 'Kemal Paşa Branco' },
+    desc: {
+      en: 'Extracted from quarries in Kemalpaşa, İzmir, this white marble is one of Turkey\'s most widely exported stones. Its consistent quality and neutral tone make it highly versatile for large-scale commercial and residential projects.',
+      tr: 'İzmir Kemalpaşa\'daki ocaklardan çıkarılan bu beyaz mermer, Türkiye\'nin en çok ihraç edilen taşlarından biridir. Tutarlı kalitesi ve nötr tonu büyük ölçekli projelerde tercih edilir.',
+      es: 'Extraído de canteras en Kemalpaşa, İzmir, este mármol blanco es una de las piedras más exportadas de Turquía. Su calidad consistente y tono neutro lo hacen muy versátil para proyectos comerciales y residenciales a gran escala.',
+      pt: 'Extraído de pedreiras em Kemalpaşa, İzmir, este mármore branco é uma das pedras mais exportadas da Turquia. A sua qualidade consistente e tom neutro tornam-no versátil para projetos comerciais e residenciais de grande escala.',
+    },
+    displayType: { en: 'White Marble', tr: 'Beyaz Mermer', es: 'Mármol Blanco', pt: 'Mármore Branco' },
+    filterType: 'marble',
+    origin: 'Kemalpaşa, İzmir',
     image: '/img/quarybg.jpg',
   },
   {
@@ -363,48 +469,6 @@ export const products = [
     displayType: { en: 'White Marble', tr: 'Beyaz Mermer', es: 'Mármol Blanco', pt: 'Mármore Branco' },
     filterType: 'marble',
     origin: 'Milas, Muğla',
-    image: '/img/quarybg.jpg',
-  },
-  {
-    id: 'carrara-white',
-    name: { en: 'Carrara White (Bianco Ibiza)', tr: 'Carrara Beyaz (Bianco Ibiza)', es: 'Carrara Blanco (Bianco Ibiza)', pt: 'Carrara Branco (Bianco Ibiza)' },
-    desc: {
-      en: 'Turkey\'s answer to Italian Carrara. A pure white marble with subtle gray veining that delivers timeless elegance. Ideal for luxury countertops, bathroom cladding, and statement flooring.',
-      tr: 'İtalyan Carrara\'nın Türk karşılığı. Saf beyaz zemin üzerinde ince gri damarlarıyla zamansız bir zarafet sunar. Lüks tezgahlar ve banyo kaplamalarında idealdir.',
-      es: 'La respuesta de Turquía al Carrara italiano. Un mármol blanco puro con sutiles vetas grises que ofrece elegancia atemporal. Ideal para encimeras de lujo y revestimientos de baño.',
-      pt: 'A resposta da Turquia ao Carrara italiano. Um mármore branco puro com sutis veias cinzentas que oferece elegância intemporal. Ideal para bancadas de luxo e revestimentos de casa de banho.',
-    },
-    displayType: { en: 'White Marble', tr: 'Beyaz Mermer', es: 'Mármol Blanco', pt: 'Mármore Branco' },
-    filterType: 'marble',
-    origin: 'Muğla',
-    image: '/img/quarybg.jpg',
-  },
-  {
-    id: 'calacatta',
-    name: { en: 'Calacatta', tr: 'Calacatta', es: 'Calacatta', pt: 'Calacatta' },
-    desc: {
-      en: 'Distinguished by its bold, dramatic veining against a pristine white background. This premium stone is the material of choice for luxury hotels, villas, and high-end residential projects worldwide.',
-      tr: 'Saf beyaz zemin üzerinde cesur, dramatik damarlarıyla öne çıkar. Dünya genelinde lüks oteller, villalar ve üst segment konut projelerinin vazgeçilmez taşıdır.',
-      es: 'Distinguido por sus vetas audaces y dramáticas sobre un fondo blanco puro. Esta piedra premium es el material elegido para hoteles de lujo, villas y proyectos residenciales de alto nivel.',
-      pt: 'Distinguido pelas suas veias ousadas e dramáticas sobre um fundo branco puro. Esta pedra premium é o material escolhido para hotéis de luxo, vilas e projetos residenciais de alto nível.',
-    },
-    displayType: { en: 'White Marble', tr: 'Beyaz Mermer', es: 'Mármol Blanco', pt: 'Mármore Branco' },
-    filterType: 'marble',
-    origin: 'Afyonkarahisar',
-    image: '/img/quarryabout.jpg',
-  },
-  {
-    id: 'kemalpasa-white',
-    name: { en: 'Kemal Paşa White', tr: 'Kemal Paşa Beyaz', es: 'Kemal Paşa Blanco', pt: 'Kemal Paşa Branco' },
-    desc: {
-      en: 'Extracted from quarries in Kemalpaşa, İzmir, this white marble is one of Turkey\'s most widely exported stones. Its consistent quality and neutral tone make it highly versatile for large-scale commercial and residential projects.',
-      tr: 'İzmir Kemalpaşa\'daki ocaklardan çıkarılan bu beyaz mermer, Türkiye\'nin en çok ihraç edilen taşlarından biridir. Tutarlı kalitesi ve nötr tonu büyük ölçekli projelerde tercih edilir.',
-      es: 'Extraído de canteras en Kemalpaşa, İzmir, este mármol blanco es una de las piedras más exportadas de Turquía. Su calidad consistente y tono neutro lo hacen muy versátil para proyectos comerciales y residenciales a gran escala.',
-      pt: 'Extraído de pedreiras em Kemalpaşa, İzmir, este mármore branco é uma das pedras mais exportadas da Turquia. A sua qualidade consistente e tom neutro tornam-no versátil para projetos comerciais e residenciais de grande escala.',
-    },
-    displayType: { en: 'White Marble', tr: 'Beyaz Mermer', es: 'Mármol Blanco', pt: 'Mármore Branco' },
-    filterType: 'marble',
-    origin: 'Kemalpaşa, İzmir',
     image: '/img/quarybg.jpg',
   },
 
@@ -521,7 +585,7 @@ export const products = [
     displayType: { en: 'Travertine', tr: 'Traverten', es: 'Travertino', pt: 'Travertino' },
     filterType: 'travertine',
     origin: 'Denizli',
-    image: '/img/quarybg.jpg',
+    image: '/img/plakalar/pearl-travertine/2.jpeg',
   },
   {
     id: 'denizli-travertine',
@@ -535,7 +599,35 @@ export const products = [
     displayType: { en: 'Travertine', tr: 'Traverten', es: 'Travertino', pt: 'Travertino' },
     filterType: 'travertine',
     origin: 'Honaz, Denizli',
-    image: '/img/quarybg.jpg',
+    image: '/img/bloklar/denizli-travertine/123123.jpeg',
+  },
+  {
+    id: 'vanilla-ice',
+    name: { en: 'Vanilla Ice', tr: 'Vanilla Ice', es: 'Vanilla Ice', pt: 'Vanilla Ice' },
+    desc: {
+      en: 'A refined cream-white marble with a warm ivory base and soft, flowing veins. Its light, luminous tone makes it exceptionally versatile — equally at home in contemporary hotel lobbies, residential bathrooms, and exterior facade applications.',
+      tr: 'Sıcak fildişi zemin ve yumuşak, akışkan damarlı, rafine bir krem-beyaz mermer. Açık, parlak tonu onu olağanüstü çok yönlü kılıyor — çağdaş otel lobilerinde, konut banyolarında ve dış cephe uygulamalarında eşit derecede kullanılır.',
+      es: 'Un mármol crema-blanco refinado con una base de marfil cálido y vetas suaves y fluidas. Su tono claro y luminoso lo hace excepcionalmente versátil — igualmente apropiado en lobbies de hoteles contemporáneos, baños residenciales y fachadas exteriores.',
+      pt: 'Um mármore creme-branco refinado com uma base de marfim quente e veias suaves e fluidas. O seu tom claro e luminoso torna-o excecionalmente versátil — igualmente adequado em lobbies de hotéis contemporâneos, casas de banho residenciais e fachadas exteriores.',
+    },
+    displayType: { en: 'Cream Marble', tr: 'Krem Mermer', es: 'Mármol Crema', pt: 'Mármore Creme' },
+    filterType: 'marble',
+    origin: 'Turkey',
+    image: '/img/bloklar/vanilla-ice/123.jpeg',
+  },
+  {
+    id: 'lioz-turca',
+    name: { en: 'Lioz Turca', tr: 'Lioz Turca', es: 'Lioz Turca', pt: 'Lioz Turca' },
+    desc: {
+      en: 'A fine-grained Turkish limestone with a compact, even-textured surface. Prized for its neutral warmth and workability, Lioz Turca is widely specified for building facades, landscape paving, garden walls, and architectural stone restoration.',
+      tr: 'Kompakt, homojen dokulu, ince taneli Türk kireçtaşı. Nötr sıcaklığı ve işlenebilirliğiyle değer gören Lioz Turca; bina cepheleri, peyzaj döşeme, bahçe duvarları ve mimari taş restorasyonunda yaygın olarak kullanılmaktadır.',
+      es: 'Una caliza turca de grano fino con una superficie compacta y de textura uniforme. Apreciada por su calidez neutra y trabajabilidad, Lioz Turca se especifica ampliamente para fachadas de edificios, pavimentación paisajística, muros de jardín y restauración de piedra arquitectónica.',
+      pt: 'Um calcário turco de grão fino com uma superfície compacta e de textura uniforme. Apreciado pela sua neutralidade quente e trabalhabilidade, o Lioz Turca é amplamente especificado para fachadas de edifícios, pavimentação paisagística, muros de jardim e restauro de pedra arquitetónica.',
+    },
+    displayType: { en: 'Limestone', tr: 'Kireçtaşı', es: 'Caliza', pt: 'Calcário' },
+    filterType: 'marble',
+    origin: 'Turkey',
+    image: '/img/bloklar/lioz-turca/asd.jpeg',
   },
   {
     id: 'slabs',
