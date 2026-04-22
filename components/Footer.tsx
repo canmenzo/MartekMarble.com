@@ -58,6 +58,9 @@ export default function Footer() {
             <a href="tel:+902327988166" className="footer-link" style={linkStyle}>
               {T.contact_page.phone}
             </a>
+            <a href="tel:+905337301242" className="footer-link" style={linkStyle}>
+              +90 533 730 12 42
+            </a>
           </div>
         </div>
 
