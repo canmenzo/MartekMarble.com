@@ -7,7 +7,7 @@ import { t, products } from '@/lib/translations';
 
 export default function ContactPage() {
   const { lang } = useLang();
-  const T = t[lang];
+  const T = t[lang] as typeof t['en'];
   const C = T.contact_page;
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -37,7 +37,7 @@ export default function ContactPage() {
     border: 'none',
     borderBottom: '1px solid var(--border)',
     color: 'var(--cream)',
-    fontFamily: 'DM Sans, sans-serif',
+    fontFamily: "'Raleway', sans-serif",
     fontSize: '0.88rem',
     padding: '0.85rem 0',
     outline: 'none',
@@ -126,7 +126,7 @@ export default function ContactPage() {
                       background: loading ? 'var(--border)' : 'var(--gold)',
                       color: '#ffffff',
                       border: 'none',
-                      fontFamily: 'DM Sans, sans-serif',
+                      fontFamily: "'Raleway', sans-serif",
                       fontSize: '0.78rem',
                       letterSpacing: '0.15em',
                       textTransform: 'uppercase',
@@ -161,9 +161,9 @@ export default function ContactPage() {
                 <p style={{ fontSize: '0.88rem', color: 'var(--cream)', lineHeight: 1.7 }}>{C.address}</p>
               </div>
               <div>
-                <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cream-dim)', marginBottom: '0.75rem' }}>{lang === 'en' ? 'Export Ports' : 'İhracat Limanları'}</p>
+                <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cream-dim)', marginBottom: '0.75rem' }}>{lang === 'en' ? 'Export Ports' : lang === 'tr' ? 'İhracat Limanları' : lang === 'es' ? 'Puertos de Exportación' : 'Portos de Exportação'}</p>
                 <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                  {['İzmir', 'Mersin', 'Gemlik'].map(p => (
+                  {['İzmir', 'Mersin', 'Gemlik', 'Tekirdağ'].map(p => (
                     <span key={p} style={{ border: '1px solid var(--border)', color: 'var(--cream-dim)', fontSize: '0.75rem', letterSpacing: '0.1em', padding: '0.35rem 0.8rem' }}>{p}</span>
                   ))}
                 </div>

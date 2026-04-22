@@ -9,7 +9,7 @@ import { t, products } from '@/lib/translations';
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  transition: { duration: 1.1, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
 export default function Home() {
@@ -51,12 +51,19 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }}>
+        {/* Scroll indicator — chevron with pulse */}
+        <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+            animate={{ y: [0, 10, 0], opacity: [0.4, 1, 0.4] }}
+            transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           >
-            <div style={{ width: '1px', height: '60px', background: 'linear-gradient(to bottom, transparent, var(--gold))' }} />
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: '-12px', opacity: 0.5 }}>
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
           </motion.div>
         </div>
       </section>
@@ -70,7 +77,7 @@ export default function Home() {
               key={i}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+              transition={{ duration: 0.8, delay: i * 0.2 }}
               viewport={{ once: true }}
               style={{ textAlign: 'center', borderRight: i < 2 ? '1px solid var(--border)' : 'none', padding: '1rem' }}
             >
@@ -87,7 +94,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }}
             style={{ marginBottom: '4rem' }}
           >
@@ -100,9 +107,9 @@ export default function Home() {
             {products.slice(0, 8).map((p, i) => (
               <motion.div
                 key={p.id}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
+                initial={{ opacity: 0, scale: 0.97 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="product-card"
                 style={{ position: 'relative', height: '360px', overflow: 'hidden', background: 'var(--bg-dark)' }}
@@ -114,21 +121,27 @@ export default function Home() {
                   className="product-img"
                   style={{ objectFit: 'cover' }}
                 />
-                <div className="card-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0.1) 55%)', transition: 'background 0.4s' }} />
-                <div className="card-shine" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(240,30,30,0.06) 0%, transparent 60%)', opacity: 0, transition: 'opacity 0.4s' }} />
+                <div className="card-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0.1) 55%)', transition: 'background 0.5s' }} />
+                <div className="card-shine" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(240,30,30,0.06) 0%, transparent 60%)', opacity: 0, transition: 'opacity 0.5s' }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.5rem' }}>
-                  <p style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.4rem' }}>{p.type}</p>
+                  <p style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.4rem' }}>{p.displayType[lang]}</p>
                   <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: 'var(--cream)' }}>{p.name[lang]}</h3>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            style={{ marginTop: '2.5rem', textAlign: 'center' }}
+          >
             <Link href="/products" className="btn-outline">
               {T.featured.view_all}
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -140,7 +153,7 @@ export default function Home() {
               src="/img/quarybg.jpg"
               alt="Marble quarry"
               fill
-              style={{ objectFit: 'cover', transition: 'transform 0.8s ease' }}
+              style={{ objectFit: 'cover', transition: 'transform 1s ease' }}
               className="about-img"
             />
             <div style={{ position: 'absolute', inset: 0, background: 'rgba(13,13,13,0.25)' }} />
@@ -150,7 +163,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
             >
               <p style={{ fontSize: '0.72rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.5rem' }}>About</p>
@@ -169,16 +182,16 @@ export default function Home() {
         <div style={{ position: 'absolute', inset: 0, background: 'var(--bg-dark)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(240,30,30,0.07) 0%, transparent 70%)' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '640px', margin: '0 auto' }}>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }} style={{ fontSize: '0.72rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.5rem' }}>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }} style={{ fontSize: '0.72rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.5rem' }}>
             Contact
           </motion.p>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} viewport={{ once: true }} style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, color: 'var(--cream)', marginBottom: '1.2rem' }}>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.1 }} viewport={{ once: true }} style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, color: 'var(--cream)', marginBottom: '1.2rem' }}>
             {T.cta_banner.heading}
           </motion.h2>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.2 }} viewport={{ once: true }} style={{ fontSize: '0.9rem', color: 'var(--cream-dim)', marginBottom: '2.5rem' }}>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.9, delay: 0.2 }} viewport={{ once: true }} style={{ fontSize: '0.9rem', color: 'var(--cream-dim)', marginBottom: '2.5rem' }}>
             {T.cta_banner.sub}
           </motion.p>
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.3 }} viewport={{ once: true }}>
+          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.35 }} viewport={{ once: true }}>
             <Link href="/contact" className="btn-primary">
               {T.cta_banner.btn}
             </Link>
@@ -191,7 +204,7 @@ export default function Home() {
           display: inline-block;
           background: var(--gold);
           color: #fff;
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Raleway', sans-serif;
           font-size: 0.78rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -200,7 +213,7 @@ export default function Home() {
           font-weight: 500;
           position: relative;
           overflow: hidden;
-          transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+          transition: background 0.4s, box-shadow 0.4s, transform 0.3s;
         }
         .btn-primary::before {
           content: '';
@@ -208,45 +221,45 @@ export default function Home() {
           top: 0; left: -100%;
           width: 100%; height: 100%;
           background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-          transition: left 0.5s;
+          transition: left 0.6s;
         }
         .btn-primary:hover::before { left: 100%; }
-        .btn-primary:hover { background: #d01818; box-shadow: 0 4px 24px rgba(240,30,30,0.35); transform: translateY(-1px); }
+        .btn-primary:hover { background: #d01818; box-shadow: 0 4px 24px rgba(240,30,30,0.35); transform: translateY(-2px); }
 
         .btn-ghost {
           display: inline-block;
           background: transparent;
           color: var(--cream);
           border: 1px solid rgba(245,245,245,0.35);
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Raleway', sans-serif;
           font-size: 0.78rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
           padding: 0.9rem 2.4rem;
           text-decoration: none;
-          transition: border-color 0.3s, color 0.3s, background 0.3s;
+          transition: border-color 0.4s, color 0.4s, background 0.4s, transform 0.3s;
         }
-        .btn-ghost:hover { border-color: var(--cream); background: rgba(245,245,245,0.06); }
+        .btn-ghost:hover { border-color: var(--cream); background: rgba(245,245,245,0.06); transform: translateY(-2px); }
 
         .btn-outline {
           display: inline-block;
           border: 1px solid var(--border);
           color: var(--cream-dim);
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Raleway', sans-serif;
           font-size: 0.78rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
           padding: 0.9rem 2.4rem;
           text-decoration: none;
-          transition: border-color 0.3s, color 0.3s;
+          transition: border-color 0.4s, color 0.4s, transform 0.3s;
         }
-        .btn-outline:hover { border-color: var(--gold); color: var(--cream); }
+        .btn-outline:hover { border-color: var(--gold); color: var(--cream); transform: translateY(-2px); }
 
         .btn-red-outline {
           display: inline-block;
           border: 1px solid var(--gold);
           color: var(--gold);
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Raleway', sans-serif;
           font-size: 0.78rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -254,7 +267,7 @@ export default function Home() {
           text-decoration: none;
           position: relative;
           overflow: hidden;
-          transition: color 0.35s;
+          transition: color 0.45s, transform 0.3s;
         }
         .btn-red-outline::before {
           content: '';
@@ -263,16 +276,18 @@ export default function Home() {
           background: var(--gold);
           transform: scaleX(0);
           transform-origin: left;
-          transition: transform 0.35s ease;
+          transition: transform 0.45s ease;
           z-index: -1;
         }
-        .btn-red-outline:hover { color: #fff; }
+        .btn-red-outline:hover { color: #fff; transform: translateY(-2px); }
         .btn-red-outline:hover::before { transform: scaleX(1); }
 
+        .product-card { transition: transform 0.5s ease; }
+        .product-card:hover { transform: translateY(-4px); }
         .product-card:hover .product-img { transform: scale(1.06); }
         .product-card:hover .card-shine { opacity: 1; }
         .product-card:hover .card-overlay { background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.2) 55%) !important; }
-        .product-img { transition: transform 0.7s ease; }
+        .product-img { transition: transform 0.8s ease; }
         .about-img:hover { transform: scale(1.03); }
 
         @media (max-width: 768px) {

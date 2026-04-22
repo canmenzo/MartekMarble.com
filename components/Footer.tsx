@@ -8,7 +8,7 @@ const linkStyle: React.CSSProperties = {
   fontSize: '0.8rem',
   color: 'var(--cream-dim)',
   textDecoration: 'none',
-  transition: 'color 0.2s',
+  transition: 'color 0.3s',
 };
 
 export default function Footer() {
@@ -31,10 +31,10 @@ export default function Footer() {
           <p style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>{T.nav.products}</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {[
-              { label: lang === 'en' ? 'White Marble' : 'Beyaz Mermer', filter: 1 },
-              { label: lang === 'en' ? 'Beige Marble' : 'Bej Mermer', filter: 2 },
-              { label: lang === 'en' ? 'Travertine' : 'Traverten', filter: 3 },
-              { label: lang === 'en' ? 'Slabs' : 'Levhalar', filter: 4 },
+              { label: lang === 'en' ? 'White Marble' : lang === 'tr' ? 'Beyaz Mermer' : lang === 'es' ? 'Mármol Blanco' : 'Mármore Branco', filter: 1 },
+              { label: lang === 'en' ? 'Beige Marble' : lang === 'tr' ? 'Bej Mermer' : lang === 'es' ? 'Mármol Beige' : 'Mármore Bege', filter: 2 },
+              { label: lang === 'en' ? 'Travertine' : lang === 'tr' ? 'Traverten' : lang === 'es' ? 'Travertino' : 'Travertino', filter: 3 },
+              { label: lang === 'en' ? 'Slabs' : lang === 'tr' ? 'Levhalar' : lang === 'es' ? 'Losas' : 'Lajes', filter: 4 },
             ].map(item => (
               <Link
                 key={item.filter}
@@ -64,7 +64,7 @@ export default function Footer() {
         {/* Locations */}
         <div>
           <p style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>
-            {lang === 'en' ? 'Locations' : 'Lokasyonlar'}
+            {lang === 'en' ? 'Locations' : lang === 'tr' ? 'Lokasyonlar' : lang === 'es' ? 'Ubicaciones' : 'Localizações'}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
             <a href="https://www.google.com/maps/search/Izmir+Port+Turkey" target="_blank" rel="noopener noreferrer" className="footer-link" style={linkStyle}>
@@ -75,6 +75,9 @@ export default function Footer() {
             </a>
             <a href="https://www.google.com/maps/search/Gemlik+Port+Bursa+Turkey" target="_blank" rel="noopener noreferrer" className="footer-link" style={linkStyle}>
               Gemlik
+            </a>
+            <a href="https://www.google.com/maps/search/Tekirdag+Port+Turkey" target="_blank" rel="noopener noreferrer" className="footer-link" style={linkStyle}>
+              Tekirdağ
             </a>
           </div>
         </div>
