@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, Suspense } from 'react';
+import { createPortal } from 'react-dom';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -32,7 +33,7 @@ function ProductModal({ product, lang, onClose }: { product: Product; lang: Lang
     return () => { document.body.style.overflow = ''; };
   }, []);
 
-  return (
+  const content = (
     <>
       <div
         style={{
@@ -52,96 +53,96 @@ function ProductModal({ product, lang, onClose }: { product: Product; lang: Lang
             padding: '2rem 1rem',
           }}
         >
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          style={{
-            background: 'var(--bg-dark)',
-            border: '1px solid var(--border)',
-            width: '100%',
-            maxWidth: '1100px',
-            position: 'relative',
-          }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          {/* close btn */}
-          <button
-            onClick={onClose}
-            className="modal-close"
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
             style={{
-              position: 'absolute', top: '1.25rem', right: '1.25rem',
-              zIndex: 10,
-              background: 'rgba(13,13,13,0.8)',
+              background: 'var(--bg-dark)',
               border: '1px solid var(--border)',
-              color: 'var(--cream-dim)',
-              width: '2.2rem', height: '2.2rem',
-              cursor: 'pointer', fontSize: '0.9rem',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              transition: 'border-color 0.2s, color 0.2s',
+              width: '100%',
+              maxWidth: '1100px',
+              position: 'relative',
             }}
+            onClick={(e) => e.stopPropagation()}
           >
-            ✕
-          </button>
+            {/* close btn */}
+            <button
+              onClick={onClose}
+              className="modal-close"
+              style={{
+                position: 'absolute', top: '1.25rem', right: '1.25rem',
+                zIndex: 10,
+                background: 'rgba(13,13,13,0.8)',
+                border: '1px solid var(--border)',
+                color: 'var(--cream-dim)',
+                width: '2.2rem', height: '2.2rem',
+                cursor: 'pointer', fontSize: '0.9rem',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                transition: 'border-color 0.2s, color 0.2s',
+              }}
+            >
+              ✕
+            </button>
 
-          {/* Hero thumbnail */}
-          <div style={{ position: 'relative', height: '320px', overflow: 'hidden' }}>
-            <Image
-              src={product.image}
-              alt={product.name[lang]}
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--bg-dark) 0%, transparent 60%)' }} />
-            <div style={{ position: 'absolute', bottom: '2rem', left: '2.5rem', right: '4rem' }}>
-              <span style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)' }}>
-                {product.displayType[lang]} · {product.origin}
-              </span>
-              <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3vw, 2.8rem)', fontWeight: 300, color: 'var(--cream)', marginTop: '0.4rem' }}>
-                {product.name[lang]}
-              </h2>
-            </div>
-          </div>
-
-          {/* Description */}
-          <div style={{ padding: '2rem 2.5rem', borderBottom: gallery.length > 0 ? '1px solid var(--border)' : 'none' }}>
-            <p style={{ fontSize: '0.92rem', color: 'var(--cream-dim)', lineHeight: 1.9, maxWidth: '680px' }}>{product.desc[lang]}</p>
-          </div>
-
-          {/* Gallery */}
-          {gallery.length > 0 && (
-            <div style={{ padding: '2rem 2.5rem 2.5rem' }}>
-              <p style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.25rem' }}>
-                {lang === 'en' ? 'Gallery' : lang === 'tr' ? 'Galeri' : lang === 'es' ? 'Galería' : 'Galeria'} · {gallery.length} {lang === 'en' ? 'items' : lang === 'tr' ? 'öğe' : lang === 'es' ? 'items' : 'itens'}
-              </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '3px' }}>
-                {gallery.map((src, i) => (
-                  <div
-                    key={src}
-                    onClick={() => setLb(i)}
-                    className="gal-thumb"
-                    style={{ position: 'relative', height: '150px', overflow: 'hidden', background: '#111', cursor: 'pointer' }}
-                  >
-                    {isVideo(src) ? (
-                      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.4rem' }}>
-                        <span style={{ fontSize: '1.8rem', opacity: 0.5 }}>▶</span>
-                        <span style={{ fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)' }}>video</span>
-                      </div>
-                    ) : (
-                      /* eslint-disable-next-line @next/next/no-img-element */
-                      <img
-                        src={src}
-                        alt=""
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
-                        className="gal-img"
-                      />
-                    )}
-                  </div>
-                ))}
+            {/* Hero thumbnail */}
+            <div style={{ position: 'relative', height: '320px', overflow: 'hidden' }}>
+              <Image
+                src={product.image}
+                alt={product.name[lang]}
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--bg-dark) 0%, transparent 60%)' }} />
+              <div style={{ position: 'absolute', bottom: '2rem', left: '2.5rem', right: '4rem' }}>
+                <span style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)' }}>
+                  {product.displayType[lang]} · {product.origin}
+                </span>
+                <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3vw, 2.8rem)', fontWeight: 300, color: 'var(--cream)', marginTop: '0.4rem' }}>
+                  {product.name[lang]}
+                </h2>
               </div>
             </div>
-          )}
-        </motion.div>
+
+            {/* Description */}
+            <div style={{ padding: '2rem 2.5rem', borderBottom: gallery.length > 0 ? '1px solid var(--border)' : 'none' }}>
+              <p style={{ fontSize: '0.92rem', color: 'var(--cream-dim)', lineHeight: 1.9, maxWidth: '680px' }}>{product.desc[lang]}</p>
+            </div>
+
+            {/* Gallery */}
+            {gallery.length > 0 && (
+              <div style={{ padding: '2rem 2.5rem 2.5rem' }}>
+                <p style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.25rem' }}>
+                  {lang === 'en' ? 'Gallery' : lang === 'tr' ? 'Galeri' : lang === 'es' ? 'Galería' : 'Galeria'} · {gallery.length} {lang === 'en' ? 'items' : lang === 'tr' ? 'öğe' : lang === 'es' ? 'items' : 'itens'}
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '3px' }}>
+                  {gallery.map((src, i) => (
+                    <div
+                      key={src}
+                      onClick={() => setLb(i)}
+                      className="gal-thumb"
+                      style={{ position: 'relative', height: '150px', overflow: 'hidden', background: '#111', cursor: 'pointer' }}
+                    >
+                      {isVideo(src) ? (
+                        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.4rem' }}>
+                          <span style={{ fontSize: '1.8rem', opacity: 0.5 }}>▶</span>
+                          <span style={{ fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)' }}>video</span>
+                        </div>
+                      ) : (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src={src}
+                          alt=""
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
+                          className="gal-img"
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </motion.div>
         </div>
       </div>
 
@@ -153,6 +154,8 @@ function ProductModal({ product, lang, onClose }: { product: Product; lang: Lang
       `}</style>
     </>
   );
+
+  return createPortal(content, document.body);
 }
 
 export default function ProductsPage() {
