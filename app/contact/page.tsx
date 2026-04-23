@@ -11,23 +11,31 @@ export default function ContactPage() {
   const C = T.contact_page;
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setError(false);
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const res = await fetch('https://formspree.io/f/mvzdvbyz', {
-      method: 'POST',
-      body: data,
-      headers: { Accept: 'application/json' },
-    });
-
-    setLoading(false);
-    if (res.ok) {
-      setSubmitted(true);
-      form.reset();
+    try {
+      const res = await fetch('https://formspree.io/f/mvzdvbyz', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -149,6 +157,11 @@ export default function ContactPage() {
                   >
                     {loading ? '...' : C.form.send}
                   </button>
+                  {error && (
+                    <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#e04040' }}>
+                      {lang === 'en' ? 'Something went wrong. Please try again or email us directly.' : lang === 'tr' ? 'Bir hata oluştu. Lütfen tekrar deneyin veya direkt e-posta gönderin.' : lang === 'es' ? 'Algo salió mal. Inténtelo de nuevo.' : 'Algo correu mal. Tente novamente.'}
+                    </p>
+                  )}
                 </div>
               </form>
             )}
