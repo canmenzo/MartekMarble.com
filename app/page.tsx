@@ -158,13 +158,13 @@ export default function Home() {
             <motion.div
               variants={{ rest: { scale: 1 }, hover: { scale: 1.06 } }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              style={{ position: 'absolute', inset: '-35%' }}
+              style={{ position: 'absolute', inset: 0 }}
             >
               <Image
                 src={`/img/bloklar/marmara-white/${encodeURIComponent('WhatsApp Image 2026213123-04-22 at 12.07.39 PM.jpeg')}`}
                 alt="Marmara White marble"
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
               />
             </motion.div>
             {/* red shimmer sweep */}
