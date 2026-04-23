@@ -30,9 +30,12 @@ export default function ContactPage() {
         setSubmitted(true);
         form.reset();
       } else {
+        const body = await res.json().catch(() => ({}));
+        console.error('Formspree error', res.status, body);
         setError(true);
       }
-    } catch {
+    } catch (err) {
+      console.error('Formspree fetch error', err);
       setError(true);
     } finally {
       setLoading(false);
