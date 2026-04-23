@@ -149,16 +149,44 @@ export default function Home() {
       {/* About teaser */}
       <section>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }} className="about-grid">
-          <div style={{ position: 'relative', minHeight: '500px', overflow: 'hidden' }}>
-            <Image
-              src="/img/quarybg.jpg"
-              alt="Marble quarry"
-              fill
-              style={{ objectFit: 'cover', transition: 'transform 1s ease' }}
-              className="about-img"
+          <motion.div
+            style={{ position: 'relative', minHeight: '500px', overflow: 'hidden', cursor: 'pointer' }}
+            whileHover="hover"
+            initial="rest"
+            animate="rest"
+          >
+            <motion.div
+              variants={{ rest: { scale: 1 }, hover: { scale: 1.06 } }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              style={{ position: 'absolute', inset: 0 }}
+            >
+              <Image
+                src={`/img/bloklar/marmara-white/${encodeURIComponent('WhatsApp Image 2026213123-04-22 at 12.07.39 PM.jpeg')}`}
+                alt="Marmara White marble"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </motion.div>
+            {/* red shimmer sweep */}
+            <motion.div
+              variants={{
+                rest: { x: '-100%' },
+                hover: { x: '250%' },
+              }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              style={{
+                position: 'absolute', inset: 0, zIndex: 2,
+                background: 'linear-gradient(105deg, transparent 35%, rgba(240,30,30,0.18) 50%, transparent 65%)',
+                pointerEvents: 'none',
+              }}
             />
-            <div style={{ position: 'absolute', inset: 0, background: 'rgba(13,13,13,0.25)' }} />
-          </div>
+            {/* vignette darkens slightly on hover */}
+            <motion.div
+              variants={{ rest: { opacity: 1 }, hover: { opacity: 0.6 } }}
+              transition={{ duration: 0.6 }}
+              style={{ position: 'absolute', inset: 0, background: 'rgba(13,13,13,0.3)', zIndex: 1 }}
+            />
+          </motion.div>
           <div style={{ background: 'var(--bg-mid)', display: 'flex', alignItems: 'center', padding: '5rem 4rem', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, right: 0, width: '1px', height: '100%', background: 'linear-gradient(to bottom, transparent, var(--gold), transparent)', opacity: 0.4 }} />
             <motion.div
@@ -289,7 +317,6 @@ export default function Home() {
         .product-card:hover .card-shine { opacity: 1; }
         .product-card:hover .card-overlay { background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.2) 55%) !important; }
         .product-img { transition: transform 0.8s ease; }
-        .about-img:hover { transform: scale(1.03); }
 
         @media (max-width: 768px) {
           .about-grid { grid-template-columns: 1fr !important; }
