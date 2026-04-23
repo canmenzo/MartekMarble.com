@@ -173,7 +173,7 @@ export default function Home() {
                 rest: { x: '-100%' },
                 hover: { x: '250%' },
               }}
-              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 2.8, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 position: 'absolute', inset: 0, zIndex: 2,
                 background: 'linear-gradient(105deg, transparent 35%, rgba(240,30,30,0.18) 50%, transparent 65%)',
@@ -233,7 +233,7 @@ export default function Home() {
           display: inline-block;
           background: var(--gold);
           color: #fff;
-          font-family: 'Raleway', sans-serif;
+          font-family: 'Josefin Sans', sans-serif;
           font-size: 0.78rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -260,7 +260,7 @@ export default function Home() {
           background: transparent;
           color: var(--cream);
           border: 1px solid rgba(245,245,245,0.35);
-          font-family: 'Raleway', sans-serif;
+          font-family: 'Josefin Sans', sans-serif;
           font-size: 0.78rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -274,7 +274,7 @@ export default function Home() {
           display: inline-block;
           border: 1px solid var(--border);
           color: var(--cream-dim);
-          font-family: 'Raleway', sans-serif;
+          font-family: 'Josefin Sans', sans-serif;
           font-size: 0.78rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -288,7 +288,7 @@ export default function Home() {
           display: inline-block;
           border: 1px solid var(--gold);
           color: var(--gold);
-          font-family: 'Raleway', sans-serif;
+          font-family: 'Josefin Sans', sans-serif;
           font-size: 0.78rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;

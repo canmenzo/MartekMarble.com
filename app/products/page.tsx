@@ -282,7 +282,7 @@ function ProductsContent() {
           background: none;
           border: 1px solid var(--border);
           color: var(--cream-dim);
-          font-family: 'Raleway', sans-serif;
+          font-family: 'Josefin Sans', sans-serif;
           font-size: 0.72rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;

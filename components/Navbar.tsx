@@ -85,7 +85,7 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               style={{
-                fontFamily: "'Raleway', sans-serif",
+                fontFamily: "'Josefin Sans', sans-serif",
                 fontSize: '0.78rem',
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
@@ -109,7 +109,7 @@ export default function Navbar() {
                 background: 'none',
                 border: '1px solid var(--border)',
                 color: 'var(--gold)',
-                fontFamily: "'Raleway', sans-serif",
+                fontFamily: "'Josefin Sans', sans-serif",
                 fontSize: '0.72rem',
                 letterSpacing: '0.12em',
                 padding: '0.35rem 0.8rem',
@@ -154,7 +154,7 @@ export default function Navbar() {
                     background: 'none',
                     border: 'none',
                     color: 'var(--cream-dim)',
-                    fontFamily: "'Raleway', sans-serif",
+                    fontFamily: "'Josefin Sans', sans-serif",
                     fontSize: '0.72rem',
                     letterSpacing: '0.1em',
                     padding: '0.6rem 1rem',
@@ -209,7 +209,7 @@ export default function Navbar() {
             key={l.href}
             href={l.href}
             onClick={() => handleMobileNav(l.href)}
-            style={{ fontFamily: "'Raleway', sans-serif", fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: pathname === l.href ? 'var(--gold)' : 'var(--cream)', textDecoration: 'none', transition: 'color 0.3s' }}
+            style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: pathname === l.href ? 'var(--gold)' : 'var(--cream)', textDecoration: 'none', transition: 'color 0.3s' }}
           >
             {l.label}
           </Link>
@@ -226,7 +226,7 @@ export default function Navbar() {
                 border: '1px solid',
                 borderColor: lang === l ? 'var(--gold)' : 'var(--border)',
                 color: lang === l ? 'var(--gold)' : 'var(--cream-dim)',
-                fontFamily: "'Raleway', sans-serif",
+                fontFamily: "'Josefin Sans', sans-serif",
                 fontSize: '0.72rem',
                 letterSpacing: '0.1em',
                 padding: '0.4rem 0.7rem',
