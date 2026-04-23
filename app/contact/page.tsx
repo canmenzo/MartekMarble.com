@@ -98,17 +98,28 @@ export default function ContactPage() {
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                   <div>
+                    <label style={labelStyle}>{C.form.email}</label>
+                    <input name="email" type="email" required style={inputStyle} />
+                  </div>
+                  <div>
+                    <label style={labelStyle}>{C.form.phone}</label>
+                    <input name="phone" type="tel" style={inputStyle} />
+                  </div>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                  <div>
                     <label style={labelStyle}>{C.form.country}</label>
                     <input name="country" style={inputStyle} />
                   </div>
                   <div>
                     <label style={labelStyle}>{C.form.interest}</label>
-                    <select name="interest" style={{ ...inputStyle, cursor: 'pointer', backgroundImage: 'none' }}>
+                    <select name="interest" required style={{ ...inputStyle, cursor: 'pointer', backgroundImage: 'none' }}>
                       <option value="" style={{ background: '#111' }}>—</option>
                       {products.map(p => (
                         <option key={p.id} value={p.name.en} style={{ background: '#111' }}>{p.name[lang]}</option>
                       ))}
-                      <option value="General" style={{ background: '#111' }}>{lang === 'en' ? 'General Inquiry' : 'Genel Soru'}</option>
+                      <option value="General" style={{ background: '#111' }}>{lang === 'en' ? 'General Inquiry' : lang === 'tr' ? 'Genel Soru' : lang === 'es' ? 'Consulta General' : 'Consulta Geral'}</option>
                     </select>
                   </div>
                 </div>
