@@ -156,7 +156,7 @@ export default function Home() {
             animate="rest"
           >
             <motion.div
-              variants={{ rest: { scale: 1 }, hover: { scale: 1.06 } }}
+              variants={{ rest: { scale: 1 }, hover: { scale: 1.12 } }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               style={{ position: 'absolute', inset: 0 }}
             >
@@ -173,7 +173,7 @@ export default function Home() {
                 rest: { x: '-100%' },
                 hover: { x: '250%' },
               }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 position: 'absolute', inset: 0, zIndex: 2,
                 background: 'linear-gradient(105deg, transparent 35%, rgba(240,30,30,0.18) 50%, transparent 65%)',
