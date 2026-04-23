@@ -1,46 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { useLang } from '@/lib/LanguageContext';
 import { t, products } from '@/lib/translations';
 
 export default function ContactPage() {
+  return (
+    <Suspense>
+      <ContactContent />
+    </Suspense>
+  );
+}
+
+function ContactContent() {
   const { lang } = useLang();
   const T = t[lang] as typeof t['en'];
   const C = T.contact_page;
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setLoading(true);
-    setError(false);
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    try {
-      const res = await fetch('https://formspree.io/f/mvzdvbyz', {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
-        setSubmitted(true);
-        form.reset();
-      } else {
-        const body = await res.json().catch(() => ({}));
-        console.error('Formspree error', res.status, body);
-        setError(true);
-      }
-    } catch (err) {
-      console.error('Formspree fetch error', err);
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  }
+  const searchParams = useSearchParams();
+  const submitted = searchParams.get('submitted') === 'true';
 
   const inputStyle: React.CSSProperties = {
     width: '100%',
@@ -90,12 +69,13 @@ export default function ContactPage() {
             {submitted ? (
               <div style={{ border: '1px solid var(--gold)', padding: '3rem', textAlign: 'center' }}>
                 <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', color: 'var(--cream)', marginBottom: '1rem' }}>
-                  {lang === 'en' ? 'Thank You' : 'Teşekkürler'}
+                  {lang === 'en' ? 'Thank You' : lang === 'tr' ? 'Teşekkürler' : lang === 'es' ? 'Gracias' : 'Obrigado'}
                 </p>
                 <p style={{ fontSize: '0.88rem', color: 'var(--cream-dim)' }}>{C.form.success}</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <form action="https://formspree.io/f/mvzdvbyz" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                <input type="hidden" name="_next" value="https://martekmarble.com/contact?submitted=true" />
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                   <div>
                     <label style={labelStyle}>{C.form.name}</label>
@@ -143,9 +123,8 @@ export default function ContactPage() {
                 <div>
                   <button
                     type="submit"
-                    disabled={loading}
                     style={{
-                      background: loading ? 'var(--border)' : 'var(--gold)',
+                      background: 'var(--gold)',
                       color: '#ffffff',
                       border: 'none',
                       fontFamily: "'Raleway', sans-serif",
@@ -153,18 +132,13 @@ export default function ContactPage() {
                       letterSpacing: '0.15em',
                       textTransform: 'uppercase',
                       padding: '0.85rem 2.5rem',
-                      cursor: loading ? 'not-allowed' : 'pointer',
+                      cursor: 'pointer',
                       fontWeight: 500,
                       transition: 'background 0.2s',
                     }}
                   >
-                    {loading ? '...' : C.form.send}
+                    {C.form.send}
                   </button>
-                  {error && (
-                    <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#e04040' }}>
-                      {lang === 'en' ? 'Something went wrong. Please try again or email us directly.' : lang === 'tr' ? 'Bir hata oluştu. Lütfen tekrar deneyin veya direkt e-posta gönderin.' : lang === 'es' ? 'Algo salió mal. Inténtelo de nuevo.' : 'Algo correu mal. Tente novamente.'}
-                    </p>
-                  )}
                 </div>
               </form>
             )}
