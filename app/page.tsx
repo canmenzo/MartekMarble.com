@@ -105,29 +105,30 @@ export default function Home() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5px', background: 'var(--border)' }}>
             {products.slice(0, 8).map((p, i) => (
-              <motion.div
-                key={p.id}
-                initial={{ opacity: 0, scale: 0.97 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                viewport={{ once: true }}
-                className="product-card"
-                style={{ position: 'relative', height: '360px', overflow: 'hidden', background: 'var(--bg-dark)' }}
-              >
-                <Image
-                  src={p.image}
-                  alt={p.name[lang]}
-                  fill
-                  className="product-img"
-                  style={{ objectFit: 'cover' }}
-                />
-                <div className="card-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0.1) 55%)', transition: 'background 0.5s' }} />
-                <div className="card-shine" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(240,30,30,0.06) 0%, transparent 60%)', opacity: 0, transition: 'opacity 0.5s' }} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.5rem' }}>
-                  <p style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.4rem' }}>{p.displayType[lang]}</p>
-                  <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: 'var(--cream)' }}>{p.name[lang]}</h3>
-                </div>
-              </motion.div>
+              <Link key={p.id} href={`/products?open=${p.id}`} style={{ display: 'block', textDecoration: 'none' }}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true }}
+                  className="product-card"
+                  style={{ position: 'relative', height: '360px', overflow: 'hidden', background: 'var(--bg-dark)' }}
+                >
+                  <Image
+                    src={p.image}
+                    alt={p.name[lang]}
+                    fill
+                    className="product-img"
+                    style={{ objectFit: 'cover' }}
+                  />
+                  <div className="card-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0.1) 55%)', transition: 'background 0.5s' }} />
+                  <div className="card-shine" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(240,30,30,0.06) 0%, transparent 60%)', opacity: 0, transition: 'opacity 0.5s' }} />
+                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.5rem' }}>
+                    <p style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.4rem' }}>{p.displayType[lang]}</p>
+                    <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: 'var(--cream)' }}>{p.name[lang]}</h3>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
 

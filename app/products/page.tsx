@@ -35,18 +35,23 @@ function ProductModal({ product, lang, onClose }: { product: Product; lang: Lang
   return (
     <>
       <div
-        onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
         style={{
           position: 'fixed', inset: 0, zIndex: 500,
           background: 'rgba(0,0,0,0.7)',
           backdropFilter: 'blur(4px)',
           overflowY: 'auto',
-          display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-          padding: '5vh 1rem 5vh',
         }}
       >
+        <div
+          onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+          style={{
+            minHeight: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem 1rem',
+          }}
+        >
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
@@ -137,6 +142,7 @@ function ProductModal({ product, lang, onClose }: { product: Product; lang: Lang
             </div>
           )}
         </motion.div>
+        </div>
       </div>
 
       {lb !== null && <Lightbox items={gallery} initialIndex={lb} onClose={() => setLb(null)} />}
@@ -168,6 +174,11 @@ function ProductsContent() {
   useEffect(() => {
     const f = searchParams.get('f');
     if (f) setActive(Number(f));
+    const openId = searchParams.get('open');
+    if (openId) {
+      const product = products.find(p => p.id === openId);
+      if (product) setSelected(product);
+    }
   }, [searchParams]);
 
   const filtered = active === 0

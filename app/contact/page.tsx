@@ -173,15 +173,20 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
-              <div style={{ borderBottom: '1px solid var(--border)', paddingBottom: '1.5rem' }}>
-                <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cream-dim)', marginBottom: '0.5rem' }}>{lang === 'en' ? 'Address' : 'Adres'}</p>
-                <p style={{ fontSize: '0.88rem', color: 'var(--cream)', lineHeight: 1.7 }}>{C.address}</p>
-              </div>
               <div>
                 <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cream-dim)', marginBottom: '0.75rem' }}>{lang === 'en' ? 'Export Ports' : lang === 'tr' ? 'İhracat Limanları' : lang === 'es' ? 'Puertos de Exportación' : 'Portos de Exportação'}</p>
                 <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                  {['İzmir', 'İzmir Aliağa', 'Mersin', 'Gemlik', 'Tekirdağ'].map(p => (
-                    <span key={p} style={{ border: '1px solid var(--border)', color: 'var(--cream-dim)', fontSize: '0.75rem', letterSpacing: '0.1em', padding: '0.35rem 0.8rem' }}>{p}</span>
+                  {[
+                    { name: 'İzmir', url: 'https://maps.google.com/?q=Port+of+Izmir+Turkey' },
+                    { name: 'İzmir Aliağa', url: 'https://maps.google.com/?q=Aliaga+Port+Izmir+Turkey' },
+                    { name: 'Mersin', url: 'https://maps.google.com/?q=Port+of+Mersin+Turkey' },
+                    { name: 'Gemlik', url: 'https://maps.google.com/?q=Gemlik+Port+Turkey' },
+                    { name: 'Tekirdağ', url: 'https://maps.google.com/?q=Tekirdag+Port+Turkey' },
+                  ].map(p => (
+                    <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
+                      style={{ border: '1px solid var(--border)', color: 'var(--cream-dim)', fontSize: '0.75rem', letterSpacing: '0.1em', padding: '0.35rem 0.8rem', textDecoration: 'none', transition: 'border-color 0.2s, color 0.2s' }}
+                      className="port-link"
+                    >{p.name}</a>
                   ))}
                 </div>
               </div>
@@ -194,6 +199,7 @@ export default function ContactPage() {
         @media (max-width: 768px) {
           .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
         }
+        .port-link:hover { border-color: var(--gold) !important; color: var(--cream) !important; }
       `}</style>
     </div>
   );
